@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket测试</title>
+</head>
+<input type="text"  id="inp">
+<button  id="inp_submit">input</button>
+<script>
+    // 创建实例
+    let ws = new WebSocket("ws:127.0.0.1:8080/websocket");
+    ws.onopen = function () {
+        console.log("websocket 连接建立成功");
+    }
+    
+    ws.onerror = function() {
+        console.log("websocket 连接出现异常");
+    }
+
+    ws.onclose = function() {
+        console.log("websocket 连接关闭成功");
+    }
+
+    // 回调函数，接收到服务器发送的消息的时候才会触发
+    ws.onmessage = function(e) {
+        console.log("发送消息:",e.data);
+    }
+    let text = document.querySelector("#inp");
+    let submitT = document.querySelector("#inp_submit");
+    submitT.onclick = function() {
+        console.log("发送消息:",text.value);
+        ws.send(text.value);
+    }
+</script>
+</body>
+</html>

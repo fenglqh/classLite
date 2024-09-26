@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页面</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/client.css">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+    <!-- 遮罩层,实现背景模糊-->
+    <div class="cover"></div>
+    <!-- 整个页面的总容器 -->
+    <div class="client-container">
+        <!-- 网页聊天区域 -->
+        <div class="main">
+            <!-- 网页聊天区域左侧 用来显示好友列表和会话列表 -->
+            <div class="left">
+                <!-- 用户名区域 -->
+                <div class="user"></div>
+                <!-- 搜索框区域 -->
+                <div class="search">
+                    <div class="search-img"></div>
+                    <input type="text" id="search-botton" placeholder="搜索">
+                </div>
+                <!-- 标签栏区域 -->
+                <div class="tab">
+                    <!-- 会话管理区，当前会话，默认选中 -->
+                    <div class="tab-session"></div>
+                    <!-- 好友管理区 -->
+                    <div class="tab-friend"></div>
+                </div>
+                <!-- 会话列表 -->
+                <ul class="list" id="session-list">
+                    <li class="selected">
+                        <h3>小树懒</h3>
+                        <p>宝宝好可爱</p>
+                    </li>
+    
+
+                </ul>
+                <!-- 用户列表 -->
+                <ul class="list hidden" id="list-friend">
+                    
+                    <li>
+                        <h4>与今朝</h4>
+                    </li>
+                </ul>
+            </div>
+            <!-- 网页聊天区域右侧 用来显示会话具体内容 -->
+            <div class="right">
+                <!-- 标题 -->
+                <div class="title"></div>
+                <!-- 消息展示区 -->
+                <div class="message-show">
+                    <!-- 一条消息 -->
+                    <!-- <div class="message message-left">
+                        消息块 
+                        <div class="box">
+                            <h4>xx</h4>
+                            <p>fffff啥</p>
+                        </div>
+                    </div> -->
+                    <!-- <div class="message message-right">
+                        <div class="box">
+                            <h4>jj</h4>
+                            <p>不吃fdghssdgfsfdffddfdf
+                                文身断发
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- 消息编辑框 -->
+                <textarea class="text-input"></textarea>
+                <!-- 消息发送按钮 -->
+                <div class="ctrl">
+                    <button>发送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 要先引入jQuery，顺序不能反 -->
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script src="js/client.js"></script>
+</body>
+
+</html>

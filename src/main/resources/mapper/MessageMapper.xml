@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.literoom.mapper.MessageMapper">
+    <select id="getLastMessageBySessionId" resultType="java.lang.String">
+        select content from message where session_id = #{sessionId} order by post_time desc limit 1;
+    </select>
+
+    <select id="getMessageBySessionId" resultType="org.example.literoom.model.Message">
+        select message_id, session_id, from_id ,content,user_name as fromName
+        from message,user
+        where session_id = #{sessionId} and message.from_id = user.user_id
+        order by post_time desc
+        limit 100;
+    </select>
+
+    <insert id="addMessage">
+        insert into message values (null, #{fromId},#{sessionId},#{content}, now());
+    </insert>
+</mapper>

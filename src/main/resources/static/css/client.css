@@ -1,0 +1,250 @@
+.client-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.main {
+    height: 80%;
+    width: 60%;
+    display: flex;
+    border-radius: 5px;
+}
+
+.main .left {
+    height: 100%;
+    width: 30%;
+    background-color: rgb(46,49,56);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.main .right {
+    height: 100%;
+    width: 70%;
+    background-color: rgb(238, 238, 238);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0 20px;
+}
+/* 遮罩层实现图片模糊效果 */
+.cover {
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/c6a73f9a47e9d86f1dffa19b396655aa.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* 不遵守默认的文档流，通过定位来确定位置 */
+    position: absolute;
+
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.main .left .user {
+    /* 行高和容器高度设为一直，内容会垂直居中 */
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    font-size: 20px;
+    color: aliceblue;
+    padding: 0 20px;
+}
+
+.main .left .search {
+    height: 35px;
+    line-height: 35px;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.main .left .search input {
+    height: 30px;
+    width: calc(100% - 30px);
+    line-height: 30px;
+    font-size: 16px;
+    color: #e6e6e6;
+    background: rgb(36,40,44);
+    /* padding: 0 10px; */
+
+    /* 去除默认各式 */
+    border: none;
+    outline: none;
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.main .left .search .search-img {
+    height: 30px;
+    width: 30px;
+  
+    background: rgb(36,40,44);
+    background-image: url(../img/搜索.png);
+    background-repeat: no-repeat;
+    background-size: 17px 17px;
+    background-position: center center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.main .left .tab {
+    height: 30px;
+    width: 100%;
+    display: flex;
+}
+
+.main .left .tab .tab-session {
+    height: 100%;
+    width: 50%;
+    background-image: url("../img/当前会话2.png");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: center center;
+}
+
+.main .left .tab .tab-friend {
+    height: 100%;
+    width: 50%;
+    background-image: url("../img/用户.png");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: center center;
+}
+
+.main .left .list {
+    height: calc(100% - 125px);
+    width: 100%;
+    color: #e6e6e6;
+    overflow:auto;
+}
+
+.main .left .list li {
+    height: 60px;
+    width: 100%;
+    padding: 10px 20px;
+    border-top: 1px solid black;
+}
+
+.main .left .list h3,
+.main .left .list p {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+} 
+
+.main .left .list .selected {
+    background-color: rgb(46, 53, 65);
+}
+.main .left .list h4 {
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.hidden {
+    display: none;
+}
+/* 浏览器扩展类来实现滚动条隐藏  chrome*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+.main .right .title {
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.main .right .message-show {
+    width: 100%;
+    height: 450px;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    overflow: auto;
+}
+.main .right .message-show .message {
+
+    margin-top: 10px;
+    display: flex;
+}
+/* 元素靠右 */
+.main .right .message-show .message-right{
+    justify-content: flex-end;
+    
+}
+
+.main .right .message-show .message-left{
+    justify-content: flex-start;
+    
+}
+.main .right .message-show .message .box {
+    max-width: 500px;
+}
+
+.main .right .message-show .message .box h4{
+   font-weight: normal;
+   height: 20px;
+   line-height: 20px;
+   font-size: 16px;
+
+}
+
+.main .right .message-show .message .box p {
+    padding: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+.main .right .message-show .message-left .box p {
+    background-color: #f8f7f7;
+}
+.main .right .message-show .message-right .box p {
+    background-color: rgb(150,220,130);
+}
+
+.main .right .message-show .message-right .box h4 {
+    text-align: right;
+}
+
+.main .right .text-input {
+    display: block;
+    height: 140px;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: rgb(238, 238, 238);
+    resize: none;
+    padding: 10px;
+}
+.main .right .ctrl {
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+.main .right .ctrl button {
+    width: 80px;
+    border: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.main .right .ctrl button:active {
+    background-color: #e6e6e6;
+}

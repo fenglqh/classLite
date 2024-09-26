@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page - Web Chatroom</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <h2>Web Chatroom</h2>
+    </div>
+    <!-- 遮罩层， 因为模糊滤镜作用于div -->
+    <div class="cover"></div>
+    <!-- 主窗口区 -->
+    <div class="login-container">
+
+        <!-- 登录 -->
+        <div class="login-dialog">
+            <h3>登录</h3>
+            <div class="row">
+                <span>用户名</span>
+                <input type="text" id="username" />
+            </div>
+            <div class="row">
+                <span>密码</span>
+                <input type="password" id="password" />
+            </div>
+            <div class="row">
+                <button id="submit" onclick="fuc()">登录</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script>
+    let submitButton = document.querySelector('#submit');
+    submitButton.onclick = function () {
+        // 1. 获取输入框中的内容
+
+        let username = document.querySelector("#username").value;
+        let password = document.querySelector("#password").value;
+        if (username == '' || password == '') {
+            alert("请输入内容");
+            return;
+        }
+        // 2. 发送ajax请求
+        $.ajax({
+            url: "/login",
+            type: "post",
+            data: {
+                username: username,
+                password: password,
+            },
+            success: function (body) {
+                if (body && body.userId > 0) { // body先确保对象不能为空
+                    alert("登录成功");
+                    location.assign("/client.html");
+                    return;
+                } else {
+                    alert("登录失败");
+                }
+            }
+        })
+    }
+
+</script>
+
+</html>

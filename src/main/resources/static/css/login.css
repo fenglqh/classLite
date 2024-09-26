@@ -1,0 +1,74 @@
+.login-container {
+    width: 100%;
+    height: calc(100% - 50px);
+    /* 为了让页面内地登录框居中， 使用弹性布局 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.cover {
+    width: 100%;
+    height: calc(100% - 50px);
+    background-image: url('../img/c6a73f9a47e9d86f1dffa19b396655aa.jpg');    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    filter: blur(5px);
+
+}
+.login-dialog {
+    height: 40%;
+    width: 25%;
+    background-color: rgba(235, 235, 235, 0.6);
+    border-radius: 10px;
+}
+
+.login-dialog h3 {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.login-dialog .row {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.login-dialog .row span {
+    /* span 是行内元素， 不能直接设置width，需要先设置为块级元素 */
+    display: block;
+    width: 20%;
+    font-weight: 700;
+    margin-left: 10%;
+}
+
+#username, #password {
+    width: 60%;
+    height: 40px;
+    font-size: 20px;
+    text-indent: 10px;
+
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+#submit {
+    width: 80%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(38, 107, 142, 0.635);
+    color: aliceblue;
+    border-radius: 10px;
+    margin-left: 10%;
+    font-size: 18px;
+    border: none;
+}
+#submit:active {
+    background-color: rgb(50, 50, 50, 0.5);
+}

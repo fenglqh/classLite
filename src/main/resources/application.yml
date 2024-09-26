@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: LiteRoom
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/classlite?characterEncoding=utf8&useSSL=true
+    username: root
+    password: ccc123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+logging:
+  pattern:
+    console: "[%-5level] - %msg%n "
